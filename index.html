@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laserschwert</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <script>
+        function activateSword() {
+            document.getElementById("lasersword_laser").classList.toggle("active")
+        }
+
+        function startAnimation() {
+            document.getElementById("fun_box").classList.toggle("cutted");
+            document.getElementById("lasersword").classList.toggle("rotation")
+        }
+    </script>
+</head>
+
+
+
+
+
+
+<body>
+    <header>
+        <h1>Laserschwert Tutorial</h1>
+    </header>
+
+
+
+
+
+
+
+        <div class="fun_box" id="fun_box">
+
+            <div id="lasersword" class="lasersword">
+                <div class="lasersword_laser" id="lasersword_laser"></div>
+                <img class="lasersword_handle" src="./assets/lightsaber handle.png" alt="">
+            </div>
+
+            <img class="full_cuttingbox" src="./assets/Meetal box.png" alt="" srcset="">
+            <img class="left_cuttingbox" src="./assets/left.png" alt="" srcset="">
+            <img class="right_cuttingbox" src="./assets/right.png" alt="" srcset="">
+        </div>
+ 
+
+
+
+
+
+
+
+    <footer>
+        <button onclick="activateSword()">Aktiviere Laserschwert</button>
+        <button onclick="startAnimation()">Laserschwert testen</button>
+    </footer>
+</body>
+
+</html>

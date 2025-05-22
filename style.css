@@ -1,0 +1,205 @@
+/* Standards */
+
+body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgb(29, 29, 32);
+}
+
+footer,
+header {
+  padding: 32px;
+}
+
+h1{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #ff0000;
+}
+
+button{
+  border: 1px solid red;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 8px;
+  background-color: black;
+  color: #ff0000;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+button:hover{
+  box-shadow: 0px 0px 3px rgba(246, 4, 4, 0.1),
+    0px 0px 11px rgba(246, 4, 4, 0.3), 0px 0px 25px rgba(246, 4, 4, 0.4),
+    0px 0px 44px rgba(246, 4, 4, 0.5), 0px 0px 69px rgba(246, 4, 4, 0.7),
+    0px 0px 100px rgba(246, 4, 4, 0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Lasersword */
+
+.lasersword {
+  z-index: 2;
+  width: 15px;
+  height: 64px;
+  position: absolute;
+  bottom: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.lasersword_handle{
+  z-index: 2;
+}
+
+.lasersword_laser {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  z-index: 1;
+  width: 10px;
+  position: absolute;
+  bottom: 57px;
+
+/* css box shadow smooth generator */
+  background: #ff0000;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.66) 0%,
+    rgba(250, 0, 0, 1) 40%,
+    rgba(255, 0, 0, 1) 60%,
+    rgba(255, 0, 0, 0.7) 100%
+  );
+
+
+  box-shadow: 0px 0px 3px rgba(246, 4, 4, 0.1),
+    0px 0px 11px rgba(246, 4, 4, 0.3), 0px 0px 25px rgba(246, 4, 4, 0.4),
+    0px 0px 44px rgba(246, 4, 4, 0.5), 0px 0px 69px rgba(246, 4, 4, 0.7),
+    0px 0px 100px rgba(246, 4, 4, 0.8);
+
+    
+  height: 0px; 
+  transition: height 150ms ease-in;
+}
+
+.active {
+  height: 150px;
+  transition: height 110ms ease-in;
+}
+
+.lasersword_wrapper {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.rotation {
+    animation: rotationAnimation 800ms ease-in-out forwards;
+}
+
+@keyframes rotationAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.fun_box {
+  height: 150px;
+  position: relative;
+}
+
+
+.full_cuttingbox {
+  height: 100%;
+}
+
+.left_cuttingbox {
+  z-index: 1;
+  visibility: hidden;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.right_cuttingbox {
+  z-index: 3;
+  visibility: hidden;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.cutted > .full_cuttingbox {
+  visibility: hidden;
+  transition: 0s ease-in 300ms;
+}
+
+.cutted > .left_cuttingbox{
+  
+  animation: cuttedLeftAnimation 1000ms ease-in 300ms forwards;
+}
+
+.cutted > .right_cuttingbox{
+  
+  animation: cuttedrightAnimation 1000ms ease-in 300ms forwards;
+}
+
+
+
+@keyframes cuttedrightAnimation {
+  from {
+    visibility: visible;
+    transform: translateY(0px) rotate(0deg) ;
+  }
+  to {
+    visibility: visible;
+    transform: translateX(50px) translateY(30vh) rotate(30deg) ;
+  }
+}
+
+@keyframes cuttedLeftAnimation {
+  from {
+    visibility: visible;
+    transform: translateY(0px) rotate(0deg) ;
+  }
+  to {
+    visibility: visible;
+    transform: translateX(-50px) translateY(30vh) rotate(-30deg) ;
+  }
+}
