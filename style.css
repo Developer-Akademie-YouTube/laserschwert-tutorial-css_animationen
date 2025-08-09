@@ -101,7 +101,7 @@ button:hover{
 }
 
 .active {
-  height: 160px;
+  height: 180px;
   transition: all 100ms ease-in;
 }
 
