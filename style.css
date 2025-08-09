@@ -38,16 +38,11 @@ button:hover{
     0px 0px 100px rgba(246, 4, 4, 0.8);
 }
 
-
-
-
-
-
-
-
-
-
-
+/* Fun Box */
+.fun_box {
+  height: 150px;
+  position: relative;
+}
 
 /* Lasersword */
 
@@ -68,62 +63,110 @@ button:hover{
     0px 0px 100px rgba(246, 4, 4, 0.8); */
 
 .lasersword {
+  width: 16px;
+  height: 64px;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
 }
 
 .lasersword_handle{
+  z-index: 2;
 }
 
 .lasersword_laser {
+  height: 0px;
+  position: absolute;
+  bottom: 54px;
+
+  background: #ff0000;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.66) 0%,
+    rgba(250, 0, 0, 1) 40%,
+    rgba(255, 0, 0, 1) 60%,
+    rgba(255, 0, 0, 0.7) 100%
+  );
+
+  box-shadow: 0px 0px 3px rgba(246, 4, 4, 0.1),
+    0px 0px 11px rgba(246, 4, 4, 0.3), 0px 0px 25px rgba(246, 4, 4, 0.4),
+    0px 0px 44px rgba(246, 4, 4, 0.5), 0px 0px 69px rgba(246, 4, 4, 0.7),
+    0px 0px 100px rgba(246, 4, 4, 0.8);
+
+  width: 8px;
+  border-radius: 5px;
+
+  transition: all 100ms ease-in;
 }
 
 .active {
-}
-
-.lasersword_wrapper {
+  height: 160px;
+  transition: all 100ms ease-in;
 }
 
 .rotation {
+  animation: rotationSword 500ms ease-in-out forwards;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.fun_box {
-  height: 150px;
-  position: relative;
+@keyframes rotationSword {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-
 
 .full_cuttingbox {
+  height: 100%;
 }
 
 .left_cuttingbox {
+  height: 100%;
+  visibility: hidden;
+  position: absolute;
+  left: 0;
 }
 
 .right_cuttingbox {
+  height: 100%;
+  visibility: hidden;
+  position: absolute;
+  right: 0;
 }
 
 .cutted > .full_cuttingbox {
+  visibility: hidden;
+  transition: 0s 300ms;
 }
 
 .cutted > .left_cuttingbox{
+  animation: cuttedLeftBox 1000ms ease-in 300ms forwards;
+  
+}
+
+@keyframes cuttedLeftBox {
+  from{
+    visibility: visible;
+  }
+  to {
+    visibility: hidden;
+    transform: translateY(30vh) translateX(-50px) rotate(-15deg);
+  }
 }
 
 .cutted > .right_cuttingbox{
+  animation: cuttedRightBox 1000ms ease-in 300ms forwards;
+}
+
+@keyframes cuttedRightBox {
+  from{
+    visibility: visible;
+    transform: translateY(0vh);
+  }
+  to {
+    visibility: hidden;
+    transform: translateY(30vh) translateX(50px) rotate(15deg);
+  }
 }
